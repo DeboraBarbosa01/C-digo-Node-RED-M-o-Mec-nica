@@ -1,0 +1,995 @@
+[
+    {
+        "id": "a5e05f8.c2818a",
+        "type": "tab",
+        "label": "Servo",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9deb28f7.14c8c8",
+        "type": "ibmiot out",
+        "z": "a5e05f8.c2818a",
+        "authentication": "apiKey",
+        "apiKey": "7ac742b7.753d6c",
+        "outputType": "cmd",
+        "deviceId": "001",
+        "deviceType": "ESP32",
+        "eventCommandType": "comando",
+        "format": "json",
+        "data": "{\"data\":\"data\"}",
+        "qos": 0,
+        "name": "ibmiot out",
+        "service": "registered",
+        "x": 1320,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "78eccb56.7b6484",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS1",
+        "func": "msg.eventOrCommandType = 'commandR1';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "b14436a8.d60ae8",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S1_90",
+        "group": "7fff7e1f.4c029",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "90º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "90",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "78eccb56.7b6484",
+                "ea683e27.50834"
+            ]
+        ]
+    },
+    {
+        "id": "131b91b6.52f5ce",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S1_180",
+        "group": "7fff7e1f.4c029",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "180º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "180",
+        "payloadType": "num",
+        "topic": "",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "78eccb56.7b6484",
+                "ea683e27.50834"
+            ]
+        ]
+    },
+    {
+        "id": "eaeea691.77b298",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S1_0",
+        "group": "7fff7e1f.4c029",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "0º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "78eccb56.7b6484",
+                "ea683e27.50834"
+            ]
+        ]
+    },
+    {
+        "id": "ea683e27.50834",
+        "type": "ui_slider",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "label": "Polegar",
+        "tooltip": "",
+        "group": "7fff7e1f.4c029",
+        "order": 3,
+        "width": 2,
+        "height": 4,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": "180",
+        "max": "0",
+        "step": "10",
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "78eccb56.7b6484"
+            ]
+        ]
+    },
+    {
+        "id": "c6b9498c.b8e938",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS2",
+        "func": "msg.eventOrCommandType = 'commandR2';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "462fd0d6.b7327",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S2_90",
+        "group": "205b184b.a5f1a8",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "90º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "90",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "c6b9498c.b8e938",
+                "7f88fecd.412d6"
+            ]
+        ]
+    },
+    {
+        "id": "52e6c3a5.8d4e7c",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S2_180",
+        "group": "205b184b.a5f1a8",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "180º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "180",
+        "payloadType": "num",
+        "topic": "",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "c6b9498c.b8e938",
+                "7f88fecd.412d6"
+            ]
+        ]
+    },
+    {
+        "id": "4b0e6ac0.43d904",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S2_0",
+        "group": "205b184b.a5f1a8",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "0º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "c6b9498c.b8e938",
+                "7f88fecd.412d6"
+            ]
+        ]
+    },
+    {
+        "id": "7f88fecd.412d6",
+        "type": "ui_slider",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "label": "Indicador",
+        "tooltip": "",
+        "group": "205b184b.a5f1a8",
+        "order": 3,
+        "width": 2,
+        "height": 4,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": "180",
+        "max": "0",
+        "step": "10",
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "c6b9498c.b8e938"
+            ]
+        ]
+    },
+    {
+        "id": "751cf283.bfdc5c",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS3",
+        "func": "msg.eventOrCommandType = 'commandR3';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 710,
+        "y": 400,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "3a94538c.c564ec",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S3_90",
+        "group": "6d6fee66.29dfe",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "90º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "90",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "751cf283.bfdc5c",
+                "dffbb5ba.ce56c8"
+            ]
+        ]
+    },
+    {
+        "id": "f5fc79e2.d0c7a8",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S3_180",
+        "group": "6d6fee66.29dfe",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "180º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "180",
+        "payloadType": "num",
+        "topic": "",
+        "x": 120,
+        "y": 380,
+        "wires": [
+            [
+                "751cf283.bfdc5c",
+                "dffbb5ba.ce56c8"
+            ]
+        ]
+    },
+    {
+        "id": "f750e470.7a0238",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S3_0",
+        "group": "6d6fee66.29dfe",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "0º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "751cf283.bfdc5c",
+                "dffbb5ba.ce56c8"
+            ]
+        ]
+    },
+    {
+        "id": "dffbb5ba.ce56c8",
+        "type": "ui_slider",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "label": "Médio",
+        "tooltip": "",
+        "group": "6d6fee66.29dfe",
+        "order": 3,
+        "width": 2,
+        "height": 4,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": "180",
+        "max": "0",
+        "step": "10",
+        "x": 470,
+        "y": 460,
+        "wires": [
+            [
+                "751cf283.bfdc5c"
+            ]
+        ]
+    },
+    {
+        "id": "deee19ec.abca68",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS4",
+        "func": "msg.eventOrCommandType = 'commandR4';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "9fa004.137a3",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S4_90",
+        "group": "f553c770.d8dbe8",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "90º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "90",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "deee19ec.abca68",
+                "3627d089.9eaa2"
+            ]
+        ]
+    },
+    {
+        "id": "98787b0.e31b688",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S4_180",
+        "group": "f553c770.d8dbe8",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "180º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "180",
+        "payloadType": "num",
+        "topic": "",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "deee19ec.abca68",
+                "3627d089.9eaa2"
+            ]
+        ]
+    },
+    {
+        "id": "7bca06e6.288178",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S4_0",
+        "group": "f553c770.d8dbe8",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "0º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 620,
+        "wires": [
+            [
+                "deee19ec.abca68",
+                "3627d089.9eaa2"
+            ]
+        ]
+    },
+    {
+        "id": "3627d089.9eaa2",
+        "type": "ui_slider",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "label": "Anelar",
+        "tooltip": "",
+        "group": "f553c770.d8dbe8",
+        "order": 3,
+        "width": 2,
+        "height": 4,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": "180",
+        "max": "0",
+        "step": "10",
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "deee19ec.abca68"
+            ]
+        ]
+    },
+    {
+        "id": "508ba23b.7c19ac",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS5",
+        "func": "msg.eventOrCommandType = 'commandR5';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 710,
+        "y": 720,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "957eb3e8.10657",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S5_90",
+        "group": "a94fa063.3e3b",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "90º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "90",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 740,
+        "wires": [
+            [
+                "508ba23b.7c19ac",
+                "78d1fd05.c1e974"
+            ]
+        ]
+    },
+    {
+        "id": "769c0567.5c50bc",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S5_180",
+        "group": "a94fa063.3e3b",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "180º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "180",
+        "payloadType": "num",
+        "topic": "",
+        "x": 120,
+        "y": 700,
+        "wires": [
+            [
+                "508ba23b.7c19ac",
+                "78d1fd05.c1e974"
+            ]
+        ]
+    },
+    {
+        "id": "8cd0d8de.d76e88",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "S5_0",
+        "group": "a94fa063.3e3b",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "0º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "rotate_90_degrees_ccw",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 110,
+        "y": 780,
+        "wires": [
+            [
+                "508ba23b.7c19ac",
+                "78d1fd05.c1e974"
+            ]
+        ]
+    },
+    {
+        "id": "78d1fd05.c1e974",
+        "type": "ui_slider",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "label": "Mínimo",
+        "tooltip": "",
+        "group": "a94fa063.3e3b",
+        "order": 3,
+        "width": 2,
+        "height": 4,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": "180",
+        "max": "0",
+        "step": "10",
+        "x": 480,
+        "y": 780,
+        "wires": [
+            [
+                "508ba23b.7c19ac"
+            ]
+        ]
+    },
+    {
+        "id": "5b4ae943.2eac58",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "group": "6f9d7cbf.bc66c4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Posição de Corte",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "touch_app",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "",
+        "x": 990,
+        "y": 700,
+        "wires": [
+            [
+                "2ff92921.56baa6",
+                "7b967606.641898"
+            ]
+        ]
+    },
+    {
+        "id": "a86d707b.27c2b",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "group": "6f9d7cbf.bc66c4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Paz",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "touch_app",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "",
+        "x": 1070,
+        "y": 100,
+        "wires": [
+            [
+                "7ab9571a.0a2bd8",
+                "2cb523b2.fac05c"
+            ]
+        ],
+        "inputLabels": [
+            "1"
+        ],
+        "outputLabels": [
+            "2"
+        ]
+    },
+    {
+        "id": "b5b04055.4997a",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "group": "6f9d7cbf.bc66c4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Pegar e Soltar",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "touch_app",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "",
+        "x": 1180,
+        "y": 780,
+        "wires": [
+            [
+                "b879dafd.7ed048",
+                "f92e5dce.686b1"
+            ]
+        ]
+    },
+    {
+        "id": "2ff92921.56baa6",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS6",
+        "func": "msg.eventOrCommandType = 'commandR6';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1250,
+        "y": 640,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "b70c1f29.f6b7",
+        "type": "ui_button",
+        "z": "a5e05f8.c2818a",
+        "name": "",
+        "group": "6f9d7cbf.bc66c4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Hang Loose",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "touch_app",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "",
+        "x": 1150,
+        "y": 260,
+        "wires": [
+            [
+                "1b83d2df.820d7d",
+                "8057c0c5.960e2"
+            ]
+        ]
+    },
+    {
+        "id": "b879dafd.7ed048",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS7",
+        "func": "msg.eventOrCommandType = 'commandR7';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1350,
+        "y": 720,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "7ab9571a.0a2bd8",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS8",
+        "func": "msg.eventOrCommandType = 'commandR8';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1310,
+        "y": 120,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "1b83d2df.820d7d",
+        "type": "function",
+        "z": "a5e05f8.c2818a",
+        "name": "FunçãoS9",
+        "func": "msg.eventOrCommandType = 'commandR9';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1310,
+        "y": 280,
+        "wires": [
+            [
+                "9deb28f7.14c8c8"
+            ]
+        ]
+    },
+    {
+        "id": "2cb523b2.fac05c",
+        "type": "ui_toast",
+        "z": "a5e05f8.c2818a",
+        "position": "top right",
+        "displayTime": "5000",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "topic": "Botão Paz acionado",
+        "name": "Paz",
+        "x": 1340,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8057c0c5.960e2",
+        "type": "ui_toast",
+        "z": "a5e05f8.c2818a",
+        "position": "top right",
+        "displayTime": "5000",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "topic": "Botão Hang Loose acionado",
+        "name": "Hang Loose ",
+        "x": 1450,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f92e5dce.686b1",
+        "type": "ui_toast",
+        "z": "a5e05f8.c2818a",
+        "position": "top right",
+        "displayTime": "5000",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "topic": "Botão Pegar e Soltar acionado",
+        "name": "Pegar e Solta",
+        "x": 1420,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "7b967606.641898",
+        "type": "ui_toast",
+        "z": "a5e05f8.c2818a",
+        "position": "top right",
+        "displayTime": "5000",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "topic": "Botão Posição de corte acionado",
+        "name": "Posição de corte",
+        "x": 1190,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "7ac742b7.753d6c",
+        "type": "ibmiot",
+        "z": "",
+        "name": "Sender",
+        "keepalive": "60",
+        "serverName": "",
+        "cleansession": false,
+        "appId": "",
+        "shared": false
+    },
+    {
+        "id": "7fff7e1f.4c029",
+        "type": "ui_group",
+        "z": "",
+        "name": "Polegar",
+        "tab": "4ffda228.73d87c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "205b184b.a5f1a8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Indicador",
+        "tab": "4ffda228.73d87c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6d6fee66.29dfe",
+        "type": "ui_group",
+        "z": "",
+        "name": "Médio",
+        "tab": "4ffda228.73d87c",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f553c770.d8dbe8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Anelar",
+        "tab": "4ffda228.73d87c",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a94fa063.3e3b",
+        "type": "ui_group",
+        "z": "",
+        "name": "Mínimo",
+        "tab": "4ffda228.73d87c",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6f9d7cbf.bc66c4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Movimentos",
+        "tab": "2df894df.bfa28c",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false
+    },
+    {
+        "id": "4ffda228.73d87c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Manual",
+        "icon": "fa-hand-paper-o",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2df894df.bfa28c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Automático",
+        "icon": "brightness_auto",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
